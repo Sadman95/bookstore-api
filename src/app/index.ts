@@ -3,7 +3,7 @@ import express, { Application, Request, Response } from 'express';
 import path from 'path';
 
 
-export const app: Application = express();
+const app: Application = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,3 +25,4 @@ app.use(globalErrorHandler);
 app.use(notFoundHandler);
 
 
+export default app;
