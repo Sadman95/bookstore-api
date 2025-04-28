@@ -1,5 +1,5 @@
 import { Server } from 'http';
-import { app } from './app';
+import { app } from './app/index';
 import envConfig from './config/env.config';
 import db from './db/knex';
 
