@@ -3,7 +3,7 @@ import path from 'path';
 
 dotenv.config({ path: path.join(process.cwd(), '.env') });
 
-export default {
+const envConfig = {
   PORT: process.env.PORT ?? 5000,
   DB_HOST: process.env.DB_HOST ?? 'localhost',
   DB_USER: process.env.DB_USER ?? 'postgres',
@@ -15,3 +15,5 @@ export default {
   JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET ?? 'my-refresh-secret',
   JWT_REFRESH_EXPIRES_IN: process.env.JWT_REFRESH_EXPIRES_IN ?? '14d',
 };
+
+export default envConfig;
