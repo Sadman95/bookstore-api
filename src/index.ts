@@ -1,8 +1,7 @@
-import 'module-alias/register.js';
 import { Server } from 'http';
-import envConfig from './config/env.config.js';
-import db from './db/knex.js';
-import app from './app/index.js';
+import envConfig from './config/env.config';
+import db from './db/knex';
+import app from './app/index';
 
 const PORT = envConfig.PORT;
 
