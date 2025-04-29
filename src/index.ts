@@ -1,3 +1,4 @@
+import 'module-alias/register';
 import { Server } from 'http';
 import envConfig from './config/env.config';
 import db from './db/knex';
@@ -5,10 +6,9 @@ import app from './app';
 
 const PORT = envConfig.PORT;
 
-
 //handle Uncaught exceptions
 process.on('uncaughtException', (error) => {
-  console.error(error)
+  console.error(error);
   process.exit(1);
 });
 
