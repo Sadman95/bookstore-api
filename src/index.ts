@@ -1,4 +1,4 @@
-import 'module-alias/register';
+import 'module-alias/register.js';
 import { Server } from 'http';
 import envConfig from './config/env.config';
 import db from './db/knex';
