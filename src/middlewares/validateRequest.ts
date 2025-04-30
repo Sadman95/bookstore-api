@@ -19,10 +19,10 @@ export const validateRequest = (validations: ValidationChain[]) => {
       if (!result.isEmpty()) {
         const error = new ApiError(
           httpStatus.BAD_REQUEST,
-          'Something went wrong! Try again later.',
+          'Validation Error! Try again later.',
+          result.array()
         );
         error.name = 'ValidationError';
-        error.errors = result.array().map((e) => ({ ...e, message: e.msg }));
 
         if (req.file) {
           const filePath = path.join(

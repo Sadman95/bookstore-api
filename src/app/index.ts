@@ -1,6 +1,7 @@
 import { globalErrorHandler, notFoundHandler } from '@/middlewares/error.middleware';
 import express, { Application, Request, Response } from 'express';
 import path from 'path';
+import rootRouter from '@/routes/index';
 
 
 const app: Application = express();
@@ -16,6 +17,8 @@ app.set('view engine', 'ejs');
 app.get('/', (_req: Request, res: Response) => {
   res.send('Welcome to the Bookstore API!');
 });
+
+app.use('/api/v1', rootRouter);
 
 
 // Global Error Handler

@@ -8,6 +8,7 @@ type IApiResponse<T> = {
   meta?: IMeta
   data?: T
   links?: object
+  errors?: object[]
 }
 
 const sendResponse = <T>(res: Response, data: IApiResponse<T>): void => {
@@ -18,6 +19,7 @@ const sendResponse = <T>(res: Response, data: IApiResponse<T>): void => {
     meta: data.meta,
     data: data.data,
     links: data.links,
+    errors: data.errors,
   }
   res.status(responseData.statusCode).json(responseData)
 }
