@@ -37,7 +37,7 @@ A modular, scalable RESTful API for managing books and authors, built using:
 
 ## 📁 Project Structure
 
-\`\`\`
+```bash
 ├── src/
 │   ├── config/           # Knex config and DB setup
 │   ├── controllers/      # Route handlers
@@ -50,7 +50,7 @@ A modular, scalable RESTful API for managing books and authors, built using:
 ├── .env                  # Environment variables
 ├── package.json
 └── README.md
-\`\`\`
+```
 
 ---
 
@@ -58,26 +58,26 @@ A modular, scalable RESTful API for managing books and authors, built using:
 
 ### 1. Clone the repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/your-username/bookstore-api.git
 cd bookstore-api
-\`\`\`
+```
 
 ### 2. Install dependencies
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 3. Configure Environment Variables
 
 Create a \`.env\` file in the root directory:
 
-\`\`\`env
+```bash
 PORT=5000
 DATABASE_URL=postgres://user:password@localhost:5432/bookstore
 NODE_ENV=development
-\`\`\`
+```
 
 ---
 
@@ -87,25 +87,28 @@ Make sure PostgreSQL is running locally.
 
 #### Run Migrations
 
-\`\`\`bash
+```bash
 npx knex migrate:latest
-\`\`\`
+```
 
 #### (Optional) Run Seed Data
 
-\`\`\`bash
+```bash
 npx knex seed:run
-\`\`\`
+```
 
 ---
 
 ### 5. Start the Server
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
-Server will run at: \`http://localhost:5000\`
+Server will run at: 
+```bash
+http://localhost:5000/api/v1
+```
 
 ---
 
@@ -115,13 +118,13 @@ Server will run at: \`http://localhost:5000\`
 
 | Method | Endpoint          | Description             |
 |--------|-------------------|-------------------------|
-| GET    | \`/api/books\`      | Get all books (paginated, searchable) |
-| GET    | \`/api/books/:id\`  | Get a specific book     |
-| POST   | \`/api/books\`      | Create a new book       |
-| PATCH  | \`/api/books/:id\`  | Update a book           |
-| DELETE | \`/api/books/:id\`  | Delete a book           |
+| GET    | \`/api/v1/books\`      | Get all books (paginated, searchable) |
+| GET    | \`/api/v1/books/:id\`  | Get a specific book     |
+| POST   | \`/api/v1/books\`      | Create a new book       |
+| PATCH  | \`/api/v1/books/:id\`  | Update a book           |
+| DELETE | \`/api/v1/books/:id\`  | Delete a book           |
 
-#### Query Parameters (for \`/api/books\`)
+#### Query Parameters (for \`/api/v1/books\`)
 
 | Param       | Type   | Description                         |
 |-------------|--------|-------------------------------------|
@@ -138,11 +141,11 @@ Server will run at: \`http://localhost:5000\`
 
 | Method | Endpoint            | Description              |
 |--------|---------------------|--------------------------|
-| GET    | \`/api/authors\`      | Get all authors (searchable) |
-| GET    | \`/api/authors/:id\`  | Get a specific author     |
-| POST   | \`/api/authors\`      | Create a new author       |
-| PATCH  | \`/api/authors/:id\`  | Update an author          |
-| DELETE | \`/api/authors/:id\`  | Delete an author          |
+| GET    | \`/api/v1/authors\`      | Get all authors (searchable) |
+| GET    | \`/api/v1/authors/:id\`  | Get a specific author     |
+| POST   | \`/api/v1/authors\`      | Create a new author       |
+| PATCH  | \`/api/v1/authors/:id\`  | Update an author          |
+| DELETE | \`/api/v1/authors/:id\`  | Delete an author          |
 
 ---
 
@@ -154,33 +157,16 @@ Server will run at: \`http://localhost:5000\`
 
 ---
 
-## 🧪 Testing (Optional Setup)
 
-\`\`\`bash
-npm run test
-\`\`\`
-
-You can use **Jest** + **Supertest** for unit and integration tests.
-
----
 
 ## 📤 Deployment Notes
 
 - Update \`DATABASE_URL\` in \`.env.production\`
 - Run Knex migrations in production:
-  \`\`\`bash
+  ```bash
   NODE_ENV=production npx knex migrate:latest
-  \`\`\`
+  ```
 
 ---
 
-## 🧠 Contributors & Acknowledgements
 
-Built with ❤️ by [Your Name]  
-Inspired by best practices from Objection.js, Knex, and Express projects
-
----
-
-## 📜 License
-
-MIT License
